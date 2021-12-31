@@ -1,0 +1,101 @@
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+}
+
+.column {
+  float: left;
+  width: 15%;
+  padding: 10px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column img {
+  width: 100%;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.column img:hover {
+  box-shadow: 8px 8px 4px grey;
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  display: none;
+}
+
+#imgtext {
+  position: absolute;
+  vertical-align: bottom;
+  color: black;
+  font-size: 15px;
+}
+
+.closebtn {
+  position: absolute;
+  top: 10px;
+  left: 720px;
+  color: black;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.closebtn:hover {
+  color: grey;
+  text-decoration: none;
+}
+
+#link {
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  color: black;
+}
+
+#link .container {
+  position: relative;
+  width: 75%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: black;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}

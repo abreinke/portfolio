@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+<body>
+
+<div style="text-align:center">
+  <p>Click on any image to expand it.</p>
+</div>
+
+<div class="row">
+  <div class="column">
+    <img src="drawing1.jpg" alt="Heading Out (2021)" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="drawing2.jpg" alt="Flower Dance (2021)" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="drawing3.jpg" alt="Tree Study I (2020)" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="drawing4.jpg" alt="Tree Study II (2020)" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="watercolor1.jpg" alt="Home (2021)" style="width:100%" onclick="myFunction(this);">
+  </div>
+</div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:50%">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+}
+</script>
+
+</body>
+</html>
