@@ -3,6 +3,15 @@ body {
   margin: 0;
 }
 
+h1 {
+  font-weight: bold;
+  font-family: sans-serif;
+  font-style: normal;
+  font-size: 17px;
+  text-align: center;
+  color: black;
+}
+
 .column {
   float: left;
   width: 15%;
