@@ -5,11 +5,76 @@ body {
 
 h1 {
   font-weight: bold;
-  font-family: sans-serif;
+  text-transform: uppercase;
   font-style: normal;
-  font-size: 17px;
+  font-size: 4vw;
   text-align: center;
   color: black;
+}
+
+h2 {
+  margin: 10px;
+  padding: 10px;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-style: normal;
+  font-size: 2vw;
+  text-align: left;
+  color: inherit;
+}
+
+.section {
+  width: 100%;
+  height: auto;
+  background-color: white;
+  float: left;
+  margin: 10px;
+  padding: 10px;
+}
+
+.external {
+  width: 100%;
+  height: auto;
+  float: left;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 0;
+  left: 0;
+  right: 0;
+  font-style: normal;
+  background-color: rgb(51, 51, 51);
+  color: white;
+}
+
+
+.column-1 {
+  float: left;
+  width: 40%;
+  margin: 10px;
+  padding: 10px;
+  height: auto;
+}
+
+.row-1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column-1 a {
+  margin: 10px;
+  padding: 14px 16px;
+  font-weight: bold;
+  font-size: 1.5vw;
+  display: block;
+  text-decoration: none;
+  color: white;
+}
+
+.column-1 a:hover {
+  color: grey;
 }
 
 .column {
@@ -39,6 +104,31 @@ h1 {
   position: relative;
   display: none;
 }
+
+div.polaroid {
+  margin: 5px;
+  width: 15%;
+  height: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  display: inline-block;
+}
+
+div.polaroid a {
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.5vw;
+  color: black;
+}
+
+div.polaroid a:hover {
+  color: rgb(145, 153, 153);
+}
+
+div.container2 {
+  padding: 10px;
+}
+
 
 #imgtext {
   position: absolute;
@@ -162,150 +252,57 @@ h1 {
 
 .navbar {
   overflow: hidden;
-  background-color: #333;
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
 }
 
 .navbar a {
   float: left;
-  font-size: 14px;
+  font-size: 2vw;
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
-.dropdown {
+.subnav {
   float: left;
   overflow: hidden;
 }
 
-.dropdown .dropbtn {
-  font-size: 14px;
+.subnav .subnavbtn {
+  font-size: 2vw;
   border: none;
   outline: none;
   color: white;
   padding: 14px 16px;
-  background-color: inherit;
-  font: inherit;
+  background-color: black;
+  font-family: sans-serif;
   margin: 0;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+.navbar a:hover, .subnav:hover .subnavbtn {
+  color: rgb(145,153,153);
 }
 
-.dropdown-content {
+.subnav-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
-  width: 100%;
   left: 0;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  background-color: rgb(51, 51, 51);
+  width: 100%;
   z-index: 1;
 }
 
-.dropdown-content .header {
-  background: red;
-  padding: 16px;
+.subnav-content a {
+  float: left;
   color: white;
+  text-decoration: none;
 }
 
-.dropdown:hover .dropdown-content {
+.subnav-content a:hover {
+  color: rgb(145, 153, 153);
+}
+
+.subnav:hover .subnav-content {
   display: block;
-}
-
-/* Create three equal columns that floats next to each other */
-.column3 {
-  float: left;
-  width: 49%;
-  margin: 0;
-  padding: 1px;
-  background-color: #ccc;
-  height: 300px;
-}
-
-.column3 a {
-  float: none;
-  color: black;
-  padding: 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.column3 a:hover {
-  background-color: #ddd;
-}
-
-/* Clear floats after the columns */
-.row3:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    height: auto;
-  }
-}
-
-.section1 {
-  float: left;
-  margin: 10px;
-  padding:10px;
-}
-
-.polaroid {
-  float: left;
-  margin: 5px;
-  width: 16%;
-  height: auto;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  text-align: center;
-}
-
-.container2 {
-  padding: 10px;
-}
-
-.container2 a {
-  font-weight: bold;
-  font-size: 14px;
-  color: black;
-  text-decoration: none;
-}
-
-.container2 a:hover {
-  color: grey;
-}
-
-img.bottom {
-  vertical-align: bottom;
-}
-
-.section2 {
-  float: left;
-  width: 70%;
-  height: auto;
-  margin: 10px;
-  padding: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.section2 a {
-  background-color: white;
-  color: black;
-  padding: 14px 16px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.section2 a:hover {
-  color: grey;
 }
