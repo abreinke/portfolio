@@ -1,85 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Design Work</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style.css">
+<head>
+<meta charset="utf-8">
+<title>Design Projects</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"></head>
+<link rel="stylesheet" href="styles.css">
 <body>
 
-  <div class="navbar">
-    <a href="index.html">Home Page</a>
-    <div class="subnav">
-      <button class="subnavbtn">Projects<i class="fa fa-caret-down"></i></button>
-          <div class="subnav-content">
-            <a href="video.html">Video</a>
-            <a href="photography.html">Photography</a>
-            <a href="code.html">Code</a>
-            <a href="design.html">Design</a>
-            <a href="fine-art.html">Fine Art</a>
-          </div>
-        </div>
-          <div class="subnav">
-            <button class="subnavbtn">More Information<i class="fa fa-caret-down"></i></button>
-            <div class="subnav-content">
-          <a href="artist-cv.html">My Artist's CV</a>
-          <a href="mailto:abreinke@yahoo.com">Email Me</a>
-          <a href="https://www.linkedin.com/in/alicia-breinke/">LinkedIn Account</a>
-          <a href="https://www.instagram.com/abtheavidartist/">Instagram Account</a>
-        </div>
-      </div>
-    </div>
+<div class="sidebar">
+  <a class="active" href="index.html">Home</a>
+  <a href="design.html">Design</a>
+  <a href="photo.html">Photo</a>
+  <a href="video.html">Video</a>
+  <a href="fine-art.html">Fine Art</a>
+  <a href="interactive.html">Interactive</a>
+  <a href="mailto:abreinke@yahoo.com"><img src="yahoo.png" alt="Link for emailing me"></a>
+  <a href="https://www.linkedin.com/in/alicia-breinke/"><img src="linkedin.png" alt="Link to my LinkedIn page"></a>
+  <a href="https://www.instagram.com/abtheavidartist/"><img src="instagram.png" alt="Link to my Instagram page"></a>
+</div>
 
-  <h1>Design Work</h1>
+<div id=header>
+  <div class="text">Design Projects</div>
+ </div>
 
-  <div style="text-align:center">
-    <p>Click on any image to expand it.</p>
-  </div>
-
+<div class="content">
   <div class="row">
     <div class="column">
-      <img src="vortex.jpg" alt="Flower Vortex (2019)" style="width:100%" onclick="myFunction(this);">
+      <img src="design-1.jpg" alt="Sunburst" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
     </div>
     <div class="column">
-      <img src="burst.jpg" alt="Sunburst (2019)" style="width:100%" onclick="myFunction(this);">
+      <img src="design-2.jpg" alt="Flower Vortex" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
     </div>
     <div class="column">
-      <img src="bird.jpg" alt="Waves (2019)" style="width:100%" onclick="myFunction(this);">
+      <img src="design-3.jpg" alt="Crane Dance" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
     </div>
     <div class="column">
-      <img src="cranes.jpg" alt="Flight (2018)" style="width:100%" onclick="myFunction(this);">
+      <img src="design-4.jpg" alt="Tahoe" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
     </div>
     <div class="column">
-      <img src="ice.jpg" alt="Descent (2018)" style="width:100%" onclick="myFunction(this);">
+      <img src="design-5.jpg" alt="Buzz" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
     </div>
     <div class="column">
-      <img src="ocean.jpg" alt="Sea and Sky (2021)" style="width:100%" onclick="myFunction(this);">
+      <img src="design-6.jpg" alt="Serenity" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
     </div>
     <div class="column">
-      <img src="concept1.jpg" alt="CADRE Halloween Event Concept I (2020)" style="width:100%" onclick="myFunction(this);">
+      <img src="design-7.jpg" alt="Flight" onclick="openModal();currentSlide(7)" class="hover-shadow cursor">
     </div>
     <div class="column">
-      <img src="concept2.jpg" alt="CADRE Halloween Event Concept II (2020)" style="width:100%" onclick="myFunction(this);">
+      <img src="design-8.jpg" alt="Waves" onclick="openModal();currentSlide(8)" class="hover-shadow cursor">
     </div>
     <div class="column">
-      <img src="concept3.jpg" alt="CADRE Meeting Concept (2020)" style="width:100%" onclick="myFunction(this);">
+      <img src="design-9.jpg" alt="CADRE Meeting Concept" onclick="openModal();currentSlide(9)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="design-10.jpg" alt="CADRE Halloween Concept 1" onclick="openModal();currentSlide(10)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="design-11.jpg" alt="CADRE Halloween Concept 2" onclick="openModal();currentSlide(11)" class="hover-shadow cursor">
     </div>
   </div>
 
-  <div class="container">
-    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-    <img id="expandedImg" style="width:50%;max-width:750px">
-    <div id="imgtext"></div>
+  <div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+  <div class="mySlides">
+    <img src="design-1.jpg" alt="Sunburst">
   </div>
 
-  <script>
-  function myFunction(imgs) {
-    var expandImg = document.getElementById("expandedImg");
-    var imgText = document.getElementById("imgtext");
-    expandImg.src = imgs.src;
-    imgText.innerHTML = imgs.alt;
-    expandImg.parentElement.style.display = "block";
+  <div class="mySlides">
+    <img src="design-2.jpg" alt="Flower Vortex">
+  </div>
+
+  <div class="mySlides">
+    <img src="design-3.jpg" alt="Crane Dance">
+  </div>
+
+  <div class="mySlides">
+    <img src="design-4.jpg" alt="Tahoe">
+  </div>
+
+  <div class="mySlides">
+    <img src="design-5.jpg" alt="Buzz">
+  </div>
+
+  <div class="mySlides">
+    <img src="design-6.jpg" alt="Serenity">
+  </div>
+
+  <div class="mySlides">
+    <img src="design-7.jpg" alt="Flight">
+  </div>
+
+  <div class="mySlides">
+    <img src="design-8.jpg" alt="Waves">
+  </div>
+
+  <div class="mySlides">
+    <img src="design-9.jpg" alt="CADRE Meeting Concept">
+  </div>
+
+  <div class="mySlides">
+    <img src="design-10.jpg" alt="CADRE Halloween Concept 1">
+  </div>
+
+  <div class="mySlides">
+    <img src="design-11.jpg" alt="CADRE Halloween COncept 1">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+       <p id="caption"></p>
+     </div>
+
+  <div class="column">
+    <img class="demo cursor" src="design-1.jpg" onclick="currentSlide(1)" alt="Sunburst">
+  </div>
+  <div class="column">
+    <img class="demo cursor" src="design-2.jpg" onclick="currentSlide(2)" alt="Flower Vortex">
+  </div>
+  <div class="column">
+    <img class="demo cursor" src="design-3.jpg" onclick="currentSlide(3)" alt="Crane Dance">
+  </div>
+  <div class="column">
+    <img class="demo cursor" src="design-4.jpg" onclick="currentSlide(4)" alt="Tahoe">
+  </div>
+  <div class="column">
+    <img class="demo cursor" src="design-5.jpg" onclick="currentSlide(5)" alt="Buzz">
+  </div>
+  <div class="column">
+    <img class="demo cursor" src="design-6.jpg" onclick="currentSlide(6)" alt="Serenity">
+  </div>
+  <div class="column">
+    <img class="demo cursor" src="design-7.jpg" onclick="currentSlide(7)" alt="Flight">
+  </div>
+  <div class="column">
+    <img class="demo cursor" src="design-8.jpg" onclick="currentSlide(8)" alt="Waves">
+  </div>
+  <div class="column">
+    <img class="demo cursor" src="design-9.jpg" onclick="currentSlide(9)" alt="CADRE Meeting Concept">
+  </div>
+  <div class="column">
+    <img class="demo cursor" src="design-10.jpg" onclick="currentSlide(10)" alt="CADRE Halloween Concept 1">
+  </div>
+  <div class="column">
+    <img class="demo cursor" src="design-11.jpg" onclick="currentSlide(11)" alt="CADRE Halloween Concept 2">
+  </div>
+</div>
+</div>
+
+</div>
+
+<script>
+
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
   }
-  </script>
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
+</script>
 
 </body>
 </html>

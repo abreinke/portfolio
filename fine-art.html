@@ -3,70 +3,140 @@
   <head>
     <title>Fine Art Work</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 <body>
 
-  <div class="navbar">
-    <a href="index.html">Home Page</a>
-    <div class="subnav">
-      <button class="subnavbtn">Projects<i class="fa fa-caret-down"></i></button>
-          <div class="subnav-content">
-            <a href="video.html">Video</a>
-            <a href="photography.html">Photography</a>
-            <a href="code.html">Code</a>
-            <a href="design.html">Design</a>
-            <a href="fine-art.html">Fine Art</a>
-          </div>
-        </div>
-          <div class="subnav">
-            <button class="subnavbtn">More Information<i class="fa fa-caret-down"></i></button>
-            <div class="subnav-content">
-            <a href="artist-cv.html">My Artist's CV</a>
-          <a href="mailto:abreinke@yahoo.com">Email Me</a>
-          <a href="https://www.linkedin.com/in/alicia-breinke/">LinkedIn Account</a>
-          <a href="https://www.instagram.com/abtheavidartist/">Instagram Account</a>
-        </div>
-      </div>
-    </div>
+  <div class="sidebar">
+    <a class="active" href="index.html">Home</a>
+    <a href="design.html">Design</a>
+    <a href="photo.html">Photo</a>
+    <a href="video.html">Video</a>
+    <a href="fine-art.html">Fine Art</a>
+    <a href="interactive.html">Interactive</a>
+    <a href="mailto:abreinke@yahoo.com"><img src="yahoo.png" alt="Link for emailing me"></a>
+    <a href="https://www.linkedin.com/in/alicia-breinke/"><img src="linkedin.png" alt="Link to my LinkedIn page"></a>
+    <a href="https://www.instagram.com/abtheavidartist/"><img src="instagram.png" alt="Link to my Instagram page"></a>
+  </div>
 
-<h1>Fine Art Work</h1>
-<div style="text-align:center">
-  <p>Click on any image to expand it.</p>
-</div>
+<div class="content">
+
+  <div id=header>
+    <div class="text">Fine Art Projects</div>
+   </div>
 
 <div class="row">
   <div class="column">
-    <img src="drawing1.jpg" alt="Heading Out (2021)" style="width:100%" onclick="myFunction(this);">
+    <img src="fa1.jpg" alt="Home" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
   </div>
   <div class="column">
-    <img src="drawing2.jpg" alt="Flower Dance (2021)" style="width:100%" onclick="myFunction(this);">
+    <img src="fa2.jpg" alt="Flower Dance" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
   </div>
   <div class="column">
-    <img src="drawing3.jpg" alt="Tree Study I (2020)" style="width:100%" onclick="myFunction(this);">
+    <img src="fa3.jpg" alt="Heading Out" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
   </div>
   <div class="column">
-    <img src="drawing4.jpg" alt="Tree Study II (2020)" style="width:100%" onclick="myFunction(this);">
+    <img src="fa4.jpg" alt="Tree Drawing 1" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
   </div>
   <div class="column">
-    <img src="watercolor1.jpg" alt="Home (2021)" style="width:100%" onclick="myFunction(this);">
+    <img src="fa5.jpg" alt="Tree Drawing 2" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
   </div>
 </div>
 
-<div class="container">
-  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-  <img id="expandedImg" style="width:50%">
-  <div id="imgtext"></div>
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+<div class="modal-content">
+
+  <div class="mySlides">
+    <img src="fa1.jpg" alt="Home">
+  </div>
+
+  <div class="mySlides">
+    <img src="fa2.jpg" alt="Flower Dance">
+  </div>
+
+  <div class="mySlides">
+    <img src="fa3.jpg" alt="Heading Out">
+  </div>
+
+  <div class="mySlides">
+    <img src="fa4.jpg" alt="Tree Drawing 1">
+  </div>
+
+  <div class="mySlides">
+    <img src="fa5.jpg" alt="Tree Drawing 2">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+       <p id="caption"></p>
+    </div>
+
+    <div class="column">
+      <img class="demo cursor" src="fa1.jpg" onclick="currentSlide(1)" alt="Home">
+    </div>
+
+    <div class="column">
+      <img class="demo cursor" src="fa2.jpg" onclick="currentSlide(2)" alt="Flower Dance">
+    </div>
+
+    <div class="column">
+      <img class="demo cursor" src="fa3.jpg" onclick="currentSlide(3)" alt="Heading Out">
+    </div>
+
+    <div class="column">
+      <img class="demo cursor" src="fa4.jpg" onclick="currentSlide(4)" alt="Tree Drawing 1">
+    </div>
+
+    <div class="column">
+      <img class="demo cursor" src="fa5.jpg" onclick="currentSlide(5)" alt="Tree Drawing 2">
+    </div>
+  </div>
+</div>
+
 </div>
 
 <script>
-function myFunction(imgs) {
-  var expandImg = document.getElementById("expandedImg");
-  var imgText = document.getElementById("imgtext");
-  expandImg.src = imgs.src;
-  imgText.innerHTML = imgs.alt;
-  expandImg.parentElement.style.display = "block";
+
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
 }
 </script>
+
 
 </body>
 </html>

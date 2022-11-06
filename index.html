@@ -1,148 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Home Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<meta charset="utf-8">
+<title>Home</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <style>
 
-header {
-  height: 300px;
-}
-
-h1 {
-  font-size: 20px;
-  font-weight: bold;
-  font-style: normal;
-  text-align: center;
-  color: black;
-}
-
-h2 {
-  font-size: 15px;
-  font-weight: normal;
-  font-style: normal;
-  text-align: left;
-  color: white;
-}
-
-.bg-image {
-  width: 1200px;
-  height: 900px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.img1 {background-image: url('cover-photo.jpg');}
-
-.fadeIn {
-  animation-name: fadeIn;
-  animation-name: fadeIn;
-  animation-duration: 3s;
-  animation-duration: 3s;
-  visibility: visible;
-}
-
-.fadeOut {
-  animation-name: fadeOut;
-  animation-name: fadeOut;
-  animation-duration: 3s;
-  animation-duration: 3s;
-  visibility: hidden;
-}
-
-@keyframes fadeIn{
-  0% {
-    opacity: 0;
-    transform: translateY(70%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  height: 1500px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  overflow: hidden;
+  position: relative;
+  background: #212121;
   font-family: sans-serif;
 }
 
-.nav {
-  width: 1200px;
-  height: 600px;
-  visibility: hidden;
-  background-color: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.5);
+.navbar {
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 10vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9;
 }
 
-.nav .column {
-  float: left;
-  width: 50%;
+.items {
+  font-weight: 200;
+  color: #FFF;
+  text-transform: capitalize;
+  font-size: 30px;
+  letter-spacing: 3px;
 }
 
-.nav .row:after {
-  content: "";
-  display: table;
-  clear: both;
+.toggle-btn {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
 }
 
-.nav a {
-  float: left;
-  font-size: 10px;
+.toggle-btn span {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 3px;
+  background: #FFF;
+  transition: 1s;
+}
+
+.toggle-btn span:nth-child(2) {
+  top: 50%;
+  width: 70%;
+}
+
+.toggle-btn span:nth-child(3) {
+  top: 75%;
+  width: 40%;
+}
+
+.toggle-btn.active span:nth-child(2) {
+  display: none;
+}
+
+.toggle-btn.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
+.toggle-btn.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 50%;
+    width: 100%;
+}
+
+.page-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+   -webkit-box-reflect: below 20px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+   transition: 1s;
+   left: 0;
+}
+
+.overlay {
+  position: fixed;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #212121;
+  z-index: 3;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.page.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.page.home {
+  background-image: url("cover-photo.jpg");
+  background-size: cover;
+}
+
+.page.design {
+  background-image: url("cover-design.jpg");
+  background-size: cover;
+}
+
+.page.photo {
+  background-image: url("cover2-photo.jpg");
+  background-size: cover;
+}
+
+.page.video {
+  background-image: url("cover-video.jpg");
+  background-size: cover;
+}
+
+.page.fineart {
+  background-image: url("cover-fineart.jpg");
+  background-size: cover;
+}
+
+.page.interactive {
+  background-image: url("cover-interactive.jpg");
+  background-size: cover;
+}
+
+.page .title {
+  font-size: 70px;
   color: white;
-  text-align: center;
-  padding: 14px 16px;
+  text-transform: uppercase;
+  -webkit-text-stroke: 2px grey;
+  font-weight: 600;
+}
+
+.page .title a {
+  font-size: 70px;
+  color: white;
+  text-transform: uppercase;
+  -webkit-text-stroke: 2px grey;
+  font-weight: 600;
   text-decoration: none;
 }
 
-.nav a:hover {
-  color: rgb(145,153,153);
+.page-container.active {
+  left: -10%;
+  transform: rotateY(45deg) scale(0.5);
 }
 
-</style>
+.nav-list {
+  position: absolute;
+  top: 50%;
+  right: 10vw;
+  transform: translateY(-50%);
+  transition: 1s;
+  opacity: 0;
+}
 
-</head>
-<body>
+.link {
+  position: relative;
+  color: white;
+  text-transform: capitalize;
+  font-size: 15px;
+  padding: 5px;
+  transition: .5s;
+  letter-spacing: 2px;
+  list-style: none;
+  cursor: pointer;
+  font-weight: 400;
+}
 
-<header>
-  <h1>Artist Portfolio</h1>
-</header>
+.link:hover {
+  opacity: 0.5;
+  color: rgb(255, 100, 100);
+  transform: translateX(-20px);
+}
 
-<div class="nav" id="myNav">
-  <div class="row">
-    <div class="column">
-      <h2>Projects</h2>
-      <a href="video.html">Video</a>
-      <a href="photography.html">Photography</a>
-      <a href="code.html">Code</a>
-      <a href="design.html">Design</a>
-      <a href="fine-art.html">Fine Art</a>
-    </div>
-  </div>
+.nav-list.show {
+  opacity: 1;
+}
 
-  <div class="row">
-    <div class="column">
-      <h2>More Information</h2>
-    <a href="artist-cv.html">My Artist's CV</a>
-    <a href="mailto:abreinke@yahoo.com">Email Me</a>
-    <a href="https://www.linkedin.com/in/alicia-breinke/">LinkedIn Account</a>
-    <a href="https://www.instagram.com/abtheavidartist/">Instagram Account</a>
-  </div>
-</div>
-
-<FadeInSection>
-
-<script>
-
-window.onScroll = function() {myFunction()};
-
-function myFunction(){
-  if (document.body.scrollTop > 400){
-    document.getElementById('myNav').className = "fadeIn";
+@keyframes slide {
+  100% {
+    left: 100%;
   }
 }
 
+@media (max-width: 400px) {
+  body::after {
+    content: 'See in 0.5x scale';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    background: #000;
+    z-index: 99999;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
+}
+
+</style>
+<body>
+
+  <nav class="navbar">
+    <p class="items">Projects</p>
+    <div class="toggle-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <ul class="nav-list">
+    <li class="link">home</li>
+    <li class="link">design</li>
+    <li class="link">photo</li>
+    <li class="link">video</li>
+    <li class="link">fine art</li>
+    <li class="link">interactive</li>
+  </ul>
+
+  <header class="page-container">
+    <span class="overlay"></span>
+    <section class="page home active">
+      <p class="title">home</p>
+    </section>
+    <section class="page design">
+      <p class="title"><a href="design.html">design</a></p>
+    </section>
+    <section class="page photo">
+      <p class="title"><a href="photo.html">photo</a></p>
+    </section>
+    <section class="page video">
+      <p class="title"><a href="video.html">video</a></p>
+    </section>
+    <section class="page fineart">
+      <p class="title"><a href="fine-art.html">fine art</a></p>
+    </section>
+    <section class="page interactive">
+      <p class="title"><a href="interactive.html">interactive</a></p>
+    </section>
+  </header>
+
+
+
+
+<script>
+const container = document.querySelector('.page-container');
+const pages = [...document.querySelectorAll('.page')];
+const toggleBtn = document.querySelector('.toggle-btn');
+const ul = document.querySelector('.nav-list');
+const overlay = document.querySelector('.overlay');
+const links = [...document.querySelectorAll('.link')];
+
+let currentPageIndex = 0;
+
+toggleBtn.addEventListener('click', () => {
+  toggleBtn.classList.toggle('active');
+  container.classList.toggle('active');
+  ul.classList.toggle('show');
+})
+
+const changePage = (i) => {
+  overlay.style.animation = `slide 1s linear 1`;
+  setTimeout(() => {
+      pages[currentPageIndex].classList.remove('active');
+      pages[i].classList.add('active');
+      currentPageIndex = i;
+  }, 500);
+  setTimeout(() => {
+      overlay.style.animation = null;
+  }, 1000);
+}
+
+links.forEach((item, i) => {
+  item.addEventListener('click', () => {
+      changePage(i);
+  })
+})
 </script>
 
 </body>
